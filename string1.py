@@ -38,8 +38,7 @@ def donuts(count):
 def both_ends(s):
     if len(s) < 2:
         return ''
-    else:
-        return s[:2] + s[-2:]
+    return s[:2] + s[-2:]
 
 
 # C. fix_start
@@ -57,6 +56,14 @@ def fix_start(s):
     string_with_asterisk = rest_of_string.replace(first_character, '*')
     final_string = first_character + string_with_asterisk
     return final_string
+
+
+# def diff_fix_start(s):
+#     back_string = s[1:].replace(s[0], '*')
+#     return s[0] + back_string
+
+
+
 
 # D. MixUp
 # Given strings a and b, return a single string with a and b separated

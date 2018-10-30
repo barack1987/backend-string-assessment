@@ -16,7 +16,7 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 
-
+# could use the endswitch() method
 def verbing(s):
     if len(s) >= 3: 
         if s[-3:] != 'ing':
@@ -37,10 +37,10 @@ def verbing(s):
 def not_bad(s):
     not_index = s.find('not')
     bad_index = s.find('bad')
-    if bad_index > not_index:
+    if not_index != -1 and bad_index != -1 and bad_index > not_index:
         before_not = s[:not_index]
-        after_bad = s[bad_index:].replace('bad', 'good')
-        return before_not + after_bad
+        bad_and_after = s[bad_index:].replace('bad', 'good')
+        return before_not + bad_and_after
     else:
         return s
 
@@ -77,6 +77,14 @@ def front_back(a, b):
         b_back = b[mid_index_b:]
 
     return a_front + b_front + a_back + b_back
+
+
+# def front_back(a,b):
+#     a_mid = len(a) / 2
+#     b_mid = len(b) / 2
+#     if len(a) % 2:
+
+
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
